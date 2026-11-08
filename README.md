@@ -20,8 +20,6 @@ Features
 
     Mouse Fluid Trails: (Currently swapping between a lightweight 2D Canvas particle system and a heavy WebGL fluid simulation).
 
-The Readme of My Suffering
-
 This project is an absolute total war. Here is a log of the battle:
 
     The Wallpaper Engine Audio API: window.wallpaperRegisterAudioListener works when it wants to. Sometimes it needs to be called inside window.onload, sometimes it needs to be called onFocus, and sometimes it just silently drops the connection when you switch from speakers to headphones. We literally had to write a hook function just to yell at the API to wake up.
