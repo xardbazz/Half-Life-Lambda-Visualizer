@@ -2,7 +2,7 @@
 
 Hello! This is a Wallpaper Engine Web project I've been suffering through.
 
-It combines a procedural WebGL Night Sky (with live Moscow weather API integration), a responsive audio visualizer, and a customizable Half-Life Lambda logo. I'm still working on it, so please AWAIT PROGRESS!!!
+It combines a procedural WebGL Night Sky (with live weather API integration), a responsive audio visualizer, and a customizable Half-Life Lambda logo. I'm still working on it, so you just wait my friend.
 What it does
 
 Creates an interactive, audio-reactive Wallpaper Engine background. It layers a GPU-rendered night sky, a WebGL/Canvas audio visualizer, and a customizable logo that breathes, scales, and thumps to your music (or your smartwatch's heartbeat). It also features a custom mouse fluid trail and live weather synchronization.
