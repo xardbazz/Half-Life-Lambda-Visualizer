@@ -1,0 +1,246 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Half-Life Lambda Audio Visualizer",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"lambda_settings" : 
+			{
+				"order" : 0,
+				"text" : "Lambda Settings",
+				"type" : "group"
+			},
+			"heartbeat_enabled" : 
+			{
+				"order" : 1,
+				"text" : "Enable Smartwatch Heartbeat",
+				"type" : "bool",
+				"value" : false
+			},
+			"lambda_speed" : 
+			{
+				"condition" : "!heartbeat_enabled.value",
+				"fraction" : true,
+				"max" : 10,
+				"min" : 0,
+				"order" : 2,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Lambda Idle speed",
+				"type" : "slider",
+				"value" : 1
+			},
+			"min_scale" : 
+			{
+				"fraction" : true,
+				"max" : 1.5,
+				"min" : 0.1,
+				"order" : 3,
+				"precision" : 2,
+				"step" : 0.05,
+				"text" : "Minimum Scale",
+				"type" : "slider",
+				"value" : 0.5
+			},
+			"max_scale" : 
+			{
+				"fraction" : true,
+				"max" : 3.0,
+				"min" : 0.2,
+				"order" : 4,
+				"precision" : 2,
+				"step" : 0.05,
+				"text" : "Maximum Scale",
+				"type" : "slider",
+				"value" : 1.0
+			},
+			"custom_logo" : 
+			{
+				"order" : 5,
+				"text" : "Custom Logo / Drawing",
+				"type" : "file",
+				"value" : ""
+			},
+			"custom_logo_size" : 
+			{
+				"condition" : "custom_logo.value",
+				"fraction" : true,
+				"max" : 3.0,
+				"min" : 0.1,
+				"order" : 6,
+				"precision" : 2,
+				"step" : 0.05,
+				"text" : "Custom Logo Size Adjust",
+				"type" : "slider",
+				"value" : 1.0
+			},
+			"audio_base_size" : 
+			{
+				"fraction" : true,
+				"max" : 5.0,
+				"min" : 0.0,
+				"order" : 7,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Audio Base Size",
+				"type" : "slider",
+				"value" : 0.8
+			},
+			"bass_intensity" : 
+			{
+				"fraction" : true,
+				"max" : 10.0,
+				"min" : 0.0,
+				"order" : 8,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Bass Intensity",
+				"type" : "slider",
+				"value" : 3.0
+			},
+			"color_lambda" : 
+			{
+				"order" : 9,
+				"text" : "Lambda Color",
+				"type" : "color",
+				"value" : "1.0 1.0 1.0"
+			},
+			"color_circle" : 
+			{
+				"order" : 10,
+				"text" : "Circle Color",
+				"type" : "color",
+				"value" : "1.0 1.0 1.0"
+			},
+			"color_bars" : 
+			{
+				"order" : 11,
+				"text" : "Bars Color",
+				"type" : "color",
+				"value" : "1.0 0.45 0.0"
+			},
+			"color_bar_line" : 
+			{
+				"order" : 12,
+				"text" : "Bar Line Color",
+				"type" : "color",
+				"value" : "1.0 0.45 0.0"
+			},
+			"color_shadow" : 
+			{
+				"order" : 13,
+				"text" : "Shadow Color",
+				"type" : "color",
+				"value" : "1.0 0.45 0.0"
+			},
+			"line_blur" :
+			{
+				"order" : 14,
+				"fraction" : true,
+				"max" : 10,
+				"min" : 0,
+				"precision" : 1,
+				"step" : 0.5,
+				"text" : "Bar Line Blur",
+				"type" : "slider",
+				"value" : 1.5
+			},
+			"line_shadow_blur" :
+			{
+				"order" : 15,
+				"fraction" : true,
+				"max" : 30,
+				"min" : 0,
+				"precision" : 0,
+				"step" : 1,
+				"text" : "Bar Line Glow Size",
+				"type" : "slider",
+				"value" : 8
+			},
+			"color_line_shadow" :
+			{
+				"order" : 16,
+				"text" : "Bar Line Glow Color",
+				"type" : "color",
+				"value" : "1.0 0.45 0.0"
+			},
+			"background_settings" :
+			{
+				"order" : 17,
+				"text" : "Picture Background",
+				"type" : "group"
+			},
+			"background_image" :
+			{
+				"order" : 18,
+				"text" : "Picture File",
+				"type" : "file",
+				"value" : ""
+			},
+			"background_enabled" :
+			{
+				"order" : 19,
+				"text" : "Apply Picture Background",
+				"type" : "bool",
+				"value" : true
+			},
+			"background_fit" :
+			{
+				"order" : 20,
+				"text" : "Picture Fit",
+				"type" : "combo",
+				"options" : [
+					{ "label" : "Cover (fill screen, crop)", "value" : "cover" },
+					{ "label" : "Contain (whole picture)",   "value" : "contain" },
+					{ "label" : "Stretch",                   "value" : "stretch" },
+					{ "label" : "Original size",             "value" : "tile" }
+				],
+				"value" : "cover"
+			},
+			"background_opacity" :
+			{
+				"order" : 21,
+				"fraction" : true,
+				"max" : 1.0,
+				"min" : 0.0,
+				"precision" : 2,
+				"step" : 0.05,
+				"text" : "Picture Opacity",
+				"type" : "slider",
+				"value" : 1.0
+			},
+			"background_blur" :
+			{
+				"order" : 22,
+				"max" : 40,
+				"min" : 0,
+				"precision" : 0,
+				"step" : 1,
+				"text" : "Picture Blur",
+				"type" : "slider",
+				"value" : 0
+			},
+			"background_dim" :
+			{
+				"order" : 23,
+				"fraction" : true,
+				"max" : 1.0,
+				"min" : 0.0,
+				"precision" : 2,
+				"step" : 0.05,
+				"text" : "Darken Picture (for logo contrast)",
+				"type" : "slider",
+				"value" : 0.3
+			}
+		},
+		"supportsaudioprocessing" : true
+	},
+	"preview" : "preview.gif",
+	"tags" : [ "Abstract", "Game" ],
+	"title" : "Half-life3 Fluid",
+	"type" : "Web",
+	"version" : 1,
+	"visibility" : "private"
+}

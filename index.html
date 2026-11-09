@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        html, body { 
+            margin: 0; padding: 0; width: 100vw; height: 100vh; 
+            overflow: hidden; background-color: #000000; 
+        }
+        
+        #container { 
+            position: relative; width: 100%; height: 100%; 
+        }
+
+        /* Fluid Simulation Layer */
+        #fluid-canvas {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2; pointer-events: none; mix-blend-mode: screen;
+        }
+
+        /* Audio Visualizer Layer */
+        #audio-viz {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 5; pointer-events: none; mix-blend-mode: screen;
+        }
+
+        /* Logo Layer */
+        #halflife-layer {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; justify-content: center; align-items: center;
+            pointer-events: none; z-index: 10; opacity: 0.85; 
+        }
+        .lambda-circle {
+            display: flex; justify-content: center; align-items: center;
+            width: 70vmin; height: 70vmin; transform: scale(1); will-change: transform; 
+        }
+        .lambda-svg {
+            width: 100%; height: 100%;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 25px rgba(255, 115, 0, 1)) drop-shadow(0 0 50px rgba(255, 115, 0, 1));
+        }
+        #custom-logo-container {
+            display: none; position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; will-change: filter;
+        }
+        #custom-logo {
+            width: 80%; height: 80%; position: absolute; top: 10%; left: 10%; will-change: transform; background-color: #ffffff; 
+            -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+        }
+        /* Picture Background Layer (bottom) */
+        #bg-layer {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            background-color: #000;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0;
+            pointer-events: none;
+            will-change: opacity, filter, transform;
+            transition: background-image 0.35s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="bg-layer"></div>
+        <canvas id="fluid-canvas"></canvas>
+        <canvas id="audio-viz"></canvas>
+        
+        <div id="halflife-layer">
+            <div class="lambda-circle">
+                <svg id="default-lambda" class="lambda-svg" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <circle id="lambda-ring" cx="128" cy="128" r="115" fill="none" stroke="#ffffff" stroke-width="12"/>
+                    <polygon id="lambda-polygon" transform="translate(15.95, 4.78)" points="60 177 78.98 177 110.49 127.02 112.47 124.05 134.05 180.98 169.85 170 163.91 152.05 147.65 157.75 111.36 65.46 81.6 65.46 81.6 82.47 96.45 82.47 102.57 96.92 54.25 177" fill="#ffffffcc"/>
+                </svg>
+                <div id="custom-logo-container"><div id="custom-logo"></div></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/fluid.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
